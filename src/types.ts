@@ -1,4 +1,4 @@
-export type Category = '✨ 全部魔法' | '🌸 仙女日常' | '💕 贴贴交友' | '📝 效率拉满' | '🎮 梦幻游乐园';
+export type Category = '🌸 全部' | '🌿 生活与身心' | '🎈 社区与同好' | '✨ 效率与自律' | '🎮 独立小游戏';
 
 export interface MiniApp {
   id: string;
@@ -9,6 +9,7 @@ export interface MiniApp {
   url: string;
   isNew: boolean;
   dateAdded: string;
+  tag?: string;
 }
 
 export interface UpdateLog {
@@ -16,3 +17,4 @@ export interface UpdateLog {
   date: string;
   content: string;
 }
+

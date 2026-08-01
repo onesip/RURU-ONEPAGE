@@ -2,41 +2,46 @@ import React, { useState } from 'react';
 import { categories, miniApps, updates } from './data';
 import { AppCard } from './components/AppCard';
 import { Contact } from './components/Contact';
-import { Sparkles, Bell, Cat, X, Heart } from 'lucide-react';
+import { Sparkles, Bell, Heart, X, Sparkle, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [showUpdates, setShowUpdates] = useState(false);
 
-  const filteredApps = activeCategory === '✨ 全部魔法' 
+  const filteredApps = activeCategory === '🌸 全部' 
     ? miniApps 
     : miniApps.filter(app => app.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 font-sans text-gray-800 selection:bg-pink-200 selection:text-pink-900 overflow-x-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50/70 via-white to-purple-50/70 font-sans text-gray-800 selection:bg-pink-100 selection:text-pink-900 overflow-x-hidden relative">
       
-      {/* Cute floating background elements */}
-      <div className="fixed top-20 left-10 text-pink-200/60 pointer-events-none"><Heart className="w-20 h-20 fill-current rotate-12" /></div>
-      <div className="fixed bottom-40 right-10 text-purple-200/60 pointer-events-none"><Sparkles className="w-16 h-16 fill-current -rotate-12" /></div>
+      {/* Subtle floating decor */}
+      <div className="fixed top-24 left-12 text-pink-200/40 pointer-events-none">
+        <Heart className="w-16 h-16 fill-current rotate-12" />
+      </div>
+      <div className="fixed bottom-36 right-12 text-purple-200/40 pointer-events-none">
+        <Sparkle className="w-14 h-14 fill-current -rotate-12" />
+      </div>
 
       {/* Header/Nav */}
-      <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-xl border-b-2 border-pink-100 shadow-sm shadow-pink-50">
+      <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-xl border-b border-pink-100/80 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-300 to-purple-400 rounded-2xl flex items-center justify-center text-white shadow-md shadow-pink-200 group-hover:rotate-12 transition-transform">
-              <Cat className="w-6 h-6" />
+          <div className="flex items-center gap-2.5 cursor-pointer group">
+            <div className="w-9 h-9 bg-gradient-to-br from-pink-300 to-purple-400 rounded-xl flex items-center justify-center text-white shadow-sm shadow-pink-100 group-hover:rotate-6 transition-transform">
+              <Code2 className="w-5 h-5" />
             </div>
-            <span className="text-xl font-black tracking-tight ml-1 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+            <span className="text-lg font-bold tracking-tight text-gray-800">
               如如的代码幻想乡
             </span>
           </div>
           <button 
             onClick={() => setShowUpdates(true)}
-            className="relative p-2.5 text-pink-400 hover:text-pink-600 hover:bg-pink-100 rounded-full transition-colors group"
+            className="relative inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium text-gray-600 hover:text-pink-600 bg-white/80 hover:bg-pink-50/80 border border-pink-100 rounded-full transition-all shadow-xs"
           >
-            <Bell className="w-6 h-6 group-hover:scale-110 transition-transform origin-top" />
-            <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-red-400 rounded-full border-2 border-white animate-pulse"></span>
+            <Bell className="w-4 h-4 text-pink-400" />
+            <span>更新日志</span>
+            <span className="w-2 h-2 bg-pink-400 rounded-full"></span>
           </button>
         </div>
       </header>
@@ -49,44 +54,44 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-pink-900/20 backdrop-blur-sm z-50"
+              className="fixed inset-0 bg-gray-900/15 backdrop-blur-xs z-50"
               onClick={() => setShowUpdates(false)}
             />
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white border-4 border-pink-100 shadow-[0_20px_60px_-15px_rgba(244,114,182,0.3)] rounded-[32px] z-50 p-6 sm:p-8"
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white border-2 border-pink-100 shadow-xl rounded-[28px] z-50 p-6 sm:p-8"
             >
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-xl font-black flex items-center gap-2 text-gray-800">
-                  <div className="p-2 bg-pink-100 text-pink-500 rounded-xl">
-                    <Sparkles className="w-5 h-5" />
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-lg font-bold flex items-center gap-2 text-gray-800">
+                  <div className="p-2 bg-pink-50 text-pink-500 rounded-xl">
+                    <Sparkles className="w-4 h-4" />
                   </div>
-                  如如的最新广播~
+                  最新动态与更新
                 </h3>
-                <button onClick={() => setShowUpdates(false)} className="text-gray-400 hover:text-pink-500 bg-gray-50 hover:bg-pink-50 p-2 rounded-full transition-colors">
-                   <X className="w-5 h-5" />
+                <button onClick={() => setShowUpdates(false)} className="text-gray-400 hover:text-gray-600 bg-gray-50 hover:bg-gray-100 p-2 rounded-full transition-colors">
+                   <X className="w-4 h-4" />
                 </button>
               </div>
-              <div className="space-y-6 max-h-[50vh] overflow-y-auto pr-2 custom-scrollbar">
+              <div className="space-y-5 max-h-[50vh] overflow-y-auto pr-2 custom-scrollbar">
                 {updates.map((update, idx) => (
                   <div key={update.id} className="relative pl-6">
                     {idx !== updates.length - 1 && (
-                      <div className="absolute left-[7px] top-6 bottom-[-24px] w-[2px] bg-pink-100 border-dashed"></div>
+                      <div className="absolute left-[7px] top-6 bottom-[-20px] w-[1.5px] bg-pink-100"></div>
                     )}
-                    <div className="absolute left-[-1px] top-1.5 w-4 h-4 rounded-full border-[3px] border-white bg-pink-400 shadow-sm"></div>
-                    <div className="text-xs font-black text-pink-400 tracking-wider mb-2">{update.date}</div>
-                    <div className="text-sm text-gray-600 leading-relaxed bg-pink-50/50 border border-pink-100 p-4 rounded-2xl">{update.content}</div>
+                    <div className="absolute left-[-1px] top-1.5 w-4 h-4 rounded-full border-[3px] border-white bg-pink-400 shadow-xs"></div>
+                    <div className="text-xs font-semibold text-pink-500 mb-1.5">{update.date}</div>
+                    <div className="text-sm text-gray-600 leading-relaxed bg-pink-50/40 border border-pink-100/60 p-3.5 rounded-2xl">{update.content}</div>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 pt-6 border-t border-pink-50 text-center">
+              <div className="mt-8 pt-5 border-t border-pink-50 text-center">
                 <button 
                   onClick={() => setShowUpdates(false)}
-                  className="w-full py-3.5 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-2xl font-bold hover:shadow-lg hover:shadow-pink-200 transition-all active:scale-95"
+                  className="w-full py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-xl font-semibold text-sm hover:opacity-95 transition-all shadow-sm"
                 >
-                  收到啦！(๑•̀ㅂ•́)و✧
+                  知道啦
                 </button>
               </div>
             </motion.div>
@@ -95,50 +100,49 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
+      <section className="pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.6, type: 'spring', bounce: 0.5 }}
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border-2 border-pink-200 text-pink-500 font-bold text-sm mb-8 shadow-sm shadow-pink-100"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-pink-200 text-pink-600 font-medium text-xs mb-6 shadow-xs"
         >
-          <Heart className="w-4 h-4 fill-pink-200" />
-          <span>持续更新的可爱宝藏库 ✨</span>
+          <Heart className="w-3.5 h-3.5 fill-pink-300 text-pink-400" />
+          <span>Hi, 我是如如 🌷 · 喜欢做一些好玩又温暖的小网页</span>
         </motion.div>
         
         <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-800 tracking-tight mb-6 leading-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 tracking-tight mb-5 leading-snug"
         >
-          欢迎来到<br className="sm:hidden"/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 relative inline-block">
+          探索与收藏 <br className="sm:hidden"/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400">
             如如的代码幻想乡
-            <Sparkles className="absolute -top-4 -right-8 w-8 h-8 text-pink-300 animate-pulse" />
           </span>
         </motion.h1>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium"
+          className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed"
         >
-          这里收集了如如施放的所有代码魔法哦！点击感兴趣的小卡片，一起进入奇妙的世界吧~ (🎀 持续更新中)
+          这是我的个人作品与喜好集合站。无论是生理期提醒、日常记账，还是好玩的游戏和同好社区，希望能在这里给你带来一点暖意和便利。
         </motion.p>
       </section>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
         {/* Category Filter */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+              className={`px-4.5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeCategory === category
-                  ? 'bg-pink-400 text-white shadow-lg shadow-pink-200 scale-105'
-                  : 'bg-white text-gray-500 border-2 border-pink-100 hover:border-pink-300 hover:bg-pink-50 hover:text-pink-500'
+                  ? 'bg-gradient-to-r from-pink-400 to-purple-400 text-white shadow-md shadow-pink-200/60 font-semibold scale-105'
+                  : 'bg-white text-gray-600 border border-pink-100 hover:border-pink-300 hover:bg-pink-50/50'
               }`}
             >
               {category}
@@ -155,10 +159,10 @@ export default function App() {
             {filteredApps.map((app) => (
               <motion.div
                 layout
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                initial={{ opacity: 0, scale: 0.9, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: -20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, scale: 0.9, y: -15 }}
+                transition={{ duration: 0.25 }}
                 key={app.id}
                 className="h-full"
               >
@@ -169,18 +173,19 @@ export default function App() {
         </motion.div>
         
         {filteredApps.length === 0 && (
-          <div className="text-center py-20 text-pink-300">
-            <Cat className="w-16 h-16 mx-auto mb-4 opacity-50" />
-            <p className="text-lg font-bold">这个分类下还没有小魔法哦，如如正在努力开发中！</p>
+          <div className="text-center py-20 text-gray-400">
+            <Heart className="w-12 h-12 mx-auto mb-3 text-pink-200" />
+            <p className="text-sm">这个分类下暂时没有内容，随后就会继续完善～</p>
           </div>
         )}
       </main>
 
       <Contact />
       
-      <footer className="text-center py-10 text-sm font-bold text-pink-300 relative z-10">
-        <p>Made with <Heart className="w-4 h-4 inline-block mx-1 fill-current animate-pulse" /> by 如如 © {new Date().getFullYear()}</p>
+      <footer className="text-center py-10 text-xs text-gray-400 border-t border-pink-100/60 relative z-10">
+        <p>© {new Date().getFullYear()} 如如的代码幻想乡 · 带着好奇与真诚持续生长</p>
       </footer>
     </div>
   );
 }
+
