@@ -352,9 +352,16 @@ export default function App() {
                 <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-white/25 bg-[#061237]/78 px-4 py-3 backdrop-blur-md sm:inset-x-5 sm:bottom-5">
                   <span>
                     <span className="block text-sm font-black">如如正在开发中</span>
-                    <span className="mt-0.5 block text-[11px] text-blue-100/75">高清原图 · 固定比例 · 不会移位</span>
+                    <span className="mt-0.5 block text-[11px] text-blue-100/75">有什么想法赶紧告诉如如</span>
                   </span>
-                  <span className="rounded-xl bg-fuchsia-500 px-3 py-2 text-xs font-black">RURU</span>
+                  <button
+                    type="button"
+                    aria-label="显示如如的微信号"
+                    onClick={() => window.alert('如如的微信：miruru2025')}
+                    className="rounded-xl bg-fuchsia-500 px-3 py-2 text-xs font-black text-white transition-all hover:-translate-y-0.5 hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-white/80"
+                  >
+                    RURU
+                  </button>
                 </div>
               </div>
               <div className="absolute -right-2 -top-3 rotate-2 rounded-2xl border-2 border-white bg-pink-400 px-3 py-2 text-xs font-black text-white shadow-xl sm:-right-3 sm:-top-4 sm:px-4 sm:text-sm">
