@@ -287,20 +287,11 @@ export default function App() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 }}
-                className="mx-auto mb-6 flex max-w-2xl flex-col gap-3 sm:flex-row lg:mx-0"
+                className="mx-auto mb-6 max-w-md lg:mx-0"
               >
-                <button
-                  type="button"
-                  onClick={openPicker}
-                  className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-fuchsia-500 to-violet-500 px-6 text-sm font-black text-white shadow-[0_14px_38px_rgba(168,85,247,0.42)] transition-transform hover:-translate-y-0.5"
-                >
-                  <Layers3 className="h-5 w-5" />
-                  直接选择网站
-                </button>
-
                 <a
                   href="#works"
-                  className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-6 text-sm font-black text-white backdrop-blur transition-colors hover:bg-white/15"
+                  className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-fuchsia-500 to-violet-500 px-6 text-sm font-black text-white shadow-[0_14px_38px_rgba(168,85,247,0.42)] transition-transform hover:-translate-y-0.5"
                 >
                   浏览全部
                   <ArrowDown className="h-4 w-4" />
@@ -400,10 +391,6 @@ export default function App() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-9 flex flex-col items-center justify-between gap-5 text-center lg:flex-row lg:text-left">
               <div>
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-fuchsia-300/25 bg-fuchsia-400/10 px-4 py-2 text-xs font-black text-fuchsia-200">
-                  <Layers3 className="h-4 w-4" />
-                  和首页同一套轻动漫科技风
-                </div>
                 <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">如如的作品工具箱</h2>
                 <p className="mt-3 text-sm leading-6 text-blue-100/60">从主视觉到作品卡、按钮和联系区，全部统一成深蓝粉紫体系。</p>
               </div>
@@ -495,19 +482,10 @@ export default function App() {
 
       <Contact />
 
-      <footer className="border-t border-white/10 bg-[#050f2f] px-4 pb-24 pt-9 text-center text-xs text-blue-100/45 md:pb-9">
+      <footer className="border-t border-white/10 bg-[#050f2f] px-4 py-9 text-center text-xs text-blue-100/45">
         <p className="font-bold text-blue-100/70">© {new Date().getFullYear()} 如如的代码幻想乡</p>
         <p className="mt-2">持续更新 · 分类清晰 · 一站直达</p>
       </footer>
-
-      <button
-        type="button"
-        onClick={openPicker}
-        className="fixed bottom-4 left-1/2 z-40 inline-flex h-14 -translate-x-1/2 items-center justify-center gap-2 rounded-full border border-white/30 bg-gradient-to-r from-fuchsia-500 to-violet-500 px-7 text-sm font-black text-white shadow-[0_16px_45px_rgba(0,0,0,0.42),0_0_30px_rgba(217,70,239,0.32)] md:hidden"
-      >
-        <Layers3 className="h-5 w-5" />
-        直接选择网站
-      </button>
     </div>
   );
 }
