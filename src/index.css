@@ -2,21 +2,22 @@
 
 :root {
   font-family: Inter, ui-rounded, "SF Pro Rounded", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  color: #334155;
-  background: #fff9fd;
+  color: #f8fafc;
+  background: #061237;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 html {
   scroll-behavior: smooth;
+  background: #061237;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #fff9fd;
+  background: #061237;
 }
 
 button,
@@ -30,81 +31,122 @@ a {
   outline-offset: 4px;
 }
 
-.site-shell {
+.hero-circuit,
+.works-circuit,
+.contact-circuit {
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(251, 207, 232, 0.42), transparent 25%),
-    radial-gradient(circle at 88% 18%, rgba(233, 213, 255, 0.45), transparent 24%),
-    linear-gradient(180deg, #fffaff 0%, #fff9fd 48%, #fbf8ff 100%);
+    radial-gradient(circle at 16% 20%, rgba(217, 70, 239, 0.15), transparent 24%),
+    radial-gradient(circle at 88% 14%, rgba(59, 130, 246, 0.18), transparent 28%),
+    linear-gradient(rgba(96, 165, 250, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 70, 239, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, #061237 0%, #081944 100%);
+  background-size: auto, auto, 42px 42px, 42px 42px, auto;
 }
 
-.dream-grid {
+.works-circuit {
   background-image:
-    linear-gradient(rgba(244, 114, 182, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.035) 1px, transparent 1px);
-  background-size: 34px 34px;
-  mask-image: linear-gradient(to bottom, black, transparent 92%);
+    radial-gradient(circle at 84% 18%, rgba(217, 70, 239, 0.13), transparent 24%),
+    radial-gradient(circle at 12% 72%, rgba(59, 130, 246, 0.15), transparent 27%),
+    linear-gradient(rgba(96, 165, 250, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 70, 239, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #071640 0%, #061237 100%);
+  background-size: auto, auto, 44px 44px, 44px 44px, auto;
 }
 
-.glass-panel::before {
-  content: "";
+.contact-circuit {
+  background-image:
+    radial-gradient(circle at 50% 18%, rgba(217, 70, 239, 0.14), transparent 26%),
+    linear-gradient(rgba(96, 165, 250, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 70, 239, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #071640 0%, #061237 100%);
+  background-size: auto, 44px 44px, 44px 44px, auto;
+}
+
+.hero-glow {
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(244, 114, 182, 0.18), rgba(168, 85, 247, 0.18));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.55;
   pointer-events: none;
 }
 
-.text-balance {
-  text-wrap: balance;
+.hero-glow-left {
+  left: -120px;
+  top: 130px;
+  height: 320px;
+  width: 320px;
+  background: rgba(217, 70, 239, 0.28);
 }
 
-.float-slow {
-  animation: float-soft 5.4s ease-in-out infinite;
+.hero-glow-right {
+  right: -100px;
+  top: 70px;
+  height: 390px;
+  width: 390px;
+  background: rgba(59, 130, 246, 0.28);
 }
 
-.float-reverse {
-  animation: float-soft-reverse 6.4s ease-in-out infinite;
+.hero-title {
+  color: #fff;
+  text-shadow:
+    0 3px 0 #c084fc,
+    0 7px 0 rgba(126, 34, 206, 0.75),
+    0 0 28px rgba(232, 121, 249, 0.35);
+}
+
+.hero-image-halo {
+  position: absolute;
+  inset: 8% -6% -3%;
+  border-radius: 42px;
+  background: linear-gradient(135deg, rgba(217, 70, 239, 0.45), rgba(59, 130, 246, 0.4));
+  filter: blur(34px);
+  opacity: 0.72;
+}
+
+.hero-image-frame {
+  isolation: isolate;
+  image-rendering: auto;
+}
+
+.hero-image-frame img {
+  display: block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.app-card-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
 }
 
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(244, 114, 182, 0.45) transparent;
+  scrollbar-color: rgba(232, 121, 249, 0.5) rgba(255, 255, 255, 0.04);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: linear-gradient(#f9a8d4, #d8b4fe);
+  background: linear-gradient(#e879f9, #8b5cf6);
 }
 
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(0, -10px, 0) rotate(4deg);
-  }
-}
-
-@keyframes float-soft-reverse {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(0, 9px, 0) rotate(-5deg);
+@media (max-width: 639px) {
+  .hero-title {
+    text-shadow:
+      0 2px 0 #c084fc,
+      0 5px 0 rgba(126, 34, 206, 0.75),
+      0 0 22px rgba(232, 121, 249, 0.3);
   }
 }
 
