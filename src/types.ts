@@ -1,5 +1,7 @@
 export type Category = '🌸 全部' | '🌿 生活与身心' | '🎈 社区与同好' | '✨ 效率与自律' | '🎮 独立小游戏';
 
+export type AppTone = 'rose' | 'lavender' | 'peach' | 'mint' | 'sky';
+
 export interface MiniApp {
   id: string;
   title: string;
@@ -10,6 +12,9 @@ export interface MiniApp {
   isNew: boolean;
   dateAdded: string;
   tag?: string;
+  keywords?: string[];
+  featured?: boolean;
+  tone?: AppTone;
 }
 
 export interface UpdateLog {
@@ -17,4 +22,3 @@ export interface UpdateLog {
   date: string;
   content: string;
 }
-
