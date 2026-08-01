@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Heart, Copy, Check, Sparkles, Github } from 'lucide-react';
+import { Check, Copy, Github, Mail, MessageCircle, Sparkles } from 'lucide-react';
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
@@ -12,65 +12,61 @@ export function Contact() {
   };
 
   return (
-    <section className="relative mx-4 mb-14 overflow-hidden rounded-[38px] border border-white/90 bg-white/75 px-6 py-12 text-center shadow-[0_24px_70px_-38px_rgba(219,39,119,0.45)] backdrop-blur-xl sm:mx-8 sm:px-12 sm:py-16">
-      <div className="absolute -right-14 -top-14 h-48 w-48 rounded-full bg-pink-200/45 blur-3xl" />
-      <div className="absolute -bottom-20 -left-14 h-56 w-56 rounded-full bg-purple-200/45 blur-3xl" />
-      <div className="absolute left-[12%] top-10 text-pink-300/75 float-slow">
-        <Sparkles className="h-6 w-6" />
-      </div>
-      <div className="absolute right-[14%] top-20 text-purple-300/70 float-reverse">
-        <Heart className="h-5 w-5 fill-current" />
-      </div>
+    <section className="bg-[#071742] px-4 py-16 text-white sm:px-6 sm:py-20">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-white/[0.07] px-6 py-12 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:px-10 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12 lg:px-14">
+        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center">
-        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-pink-100 bg-pink-50/85 px-4 py-2 text-xs font-bold text-pink-600 shadow-sm">
-          <Heart className="h-3.5 w-3.5 fill-pink-300" />
-          如如的灵感收件箱
+        <div className="relative z-10 text-center lg:text-left">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-white/10 px-4 py-2 text-xs font-black text-fuchsia-100">
+            <Sparkles className="h-4 w-4 text-pink-300" />
+            如如的灵感收件箱
+          </div>
+          <h2 className="text-3xl font-black tracking-tight sm:text-4xl">有个想法，想把它做成网页？</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100/75 sm:text-base lg:mx-0">
+            日常小痛点、奇怪但好玩的功能、想玩的小游戏，都可以告诉我。这里会继续收录如如做出来的新世界。
+          </p>
         </div>
 
-        <h2 className="mb-4 text-2xl font-black tracking-tight text-slate-800 sm:text-4xl">
-          有一个想变成网页的念头吗？
-        </h2>
-        <p className="mb-8 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
-          日常小痛点、奇怪但有趣的功能、想玩的小游戏，都可以告诉我。也许下一颗住进幻想乡的小星星，就是你的点子。
-        </p>
-
-        <div className="flex w-full max-w-xl flex-col items-stretch justify-center gap-3 sm:flex-row">
+        <div className="relative z-10 mt-8 flex min-w-[250px] flex-col gap-3 lg:mt-0">
           <button
+            type="button"
             onClick={handleCopy}
-            className="inline-flex flex-1 items-center justify-center rounded-full border border-pink-200 bg-white/90 px-5 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-black transition-colors hover:bg-white/15"
           >
             {copied ? (
               <>
-                <Check className="mr-2 h-4 w-4 text-emerald-500" />
-                <span className="text-emerald-600">邮箱已经复制好啦</span>
+                <Check className="mr-2 h-4 w-4 text-emerald-300" />
+                邮箱已复制
               </>
             ) : (
               <>
-                <Copy className="mr-2 h-4 w-4 text-pink-400" />
-                <span>复制如如的邮箱</span>
+                <Copy className="mr-2 h-4 w-4 text-fuchsia-200" />
+                复制如如的邮箱
               </>
             )}
           </button>
 
           <a
             href={`mailto:${email}`}
-            className="inline-flex flex-1 items-center justify-center rounded-full bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-pink-200/70 transition-all hover:-translate-y-0.5 hover:shadow-pink-300/70 active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-fuchsia-500 to-violet-500 px-5 py-3.5 text-sm font-black text-white shadow-[0_14px_35px_rgba(168,85,247,0.35)] transition-transform hover:-translate-y-0.5"
           >
             <Mail className="mr-2 h-4 w-4" />
             写信给如如
           </a>
+
+          <a
+            href="https://github.com/onesip/RURU-ONEPAGE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 pt-2 text-xs font-semibold text-blue-100/55 transition-colors hover:text-white"
+          >
+            <Github className="h-3.5 w-3.5" />
+            查看幻想乡的 GitHub
+          </a>
         </div>
 
-        <a
-          href="https://github.com/onesip/RURU-ONEPAGE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 text-xs font-medium text-slate-400 transition-colors hover:text-purple-600"
-        >
-          <Github className="h-3.5 w-3.5" />
-          这个幻想乡也在持续长大中
-        </a>
+        <MessageCircle className="pointer-events-none absolute bottom-7 right-7 h-20 w-20 text-white/[0.04]" />
       </div>
     </section>
   );
