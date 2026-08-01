@@ -6,6 +6,7 @@ import {
   Users,
   ListTodo,
   Gamepad2,
+  FlaskConical,
   Sparkles,
   ArrowUpRight,
   Star,
@@ -17,7 +18,8 @@ const iconMap: Record<string, React.ReactNode> = {
   Wallet: <Wallet className="w-6 h-6" />,
   Users: <Users className="w-6 h-6" />,
   ListTodo: <ListTodo className="w-6 h-6" />,
-  Gamepad2: <Gamepad2 className="w-6 h-6" />
+  Gamepad2: <Gamepad2 className="w-6 h-6" />,
+  FlaskConical: <FlaskConical className="w-6 h-6" />
 };
 
 const toneMap = {
