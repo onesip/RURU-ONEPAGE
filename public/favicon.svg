@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0764" />
+      <stop offset="100%" stop-color="#581c87" />
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)" />
+  <!-- Cute star hair decoration top right -->
+  <path d="M78 22 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z" fill="#fef08a" />
+  <!-- Hair back -->
+  <circle cx="25" cy="40" r="14" fill="url(#hairGrad)" />
+  <circle cx="75" cy="40" r="14" fill="url(#hairGrad)" />
+  <!-- Face -->
+  <circle cx="50" cy="55" r="26" fill="#ffe4e6" />
+  <!-- Blushes -->
+  <ellipse cx="36" cy="58" rx="5" ry="2.5" fill="#f43f5e" opacity="0.4" />
+  <ellipse cx="64" cy="58" rx="5" ry="2.5" fill="#f43f5e" opacity="0.4" />
+  <!-- Eyes -->
+  <ellipse cx="40" cy="52" rx="3.5" ry="4.5" fill="#3b0764" />
+  <circle cx="39" cy="50" r="1.5" fill="#ffffff" />
+  <ellipse cx="60" cy="52" rx="3.5" ry="4.5" fill="#3b0764" />
+  <circle cx="59" cy="50" r="1.5" fill="#ffffff" />
+  <!-- Smile -->
+  <path d="M46 61 Q50 65 54 61" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Bangs -->
+  <path d="M25 45 Q35 28 50 32 Q65 28 75 45 Q65 36 50 38 Q35 36 25 45 Z" fill="url(#hairGrad)" />
+  <!-- Cute heart bow on hair -->
+  <path d="M68 32 C65 28, 73 25, 71 31 Z" fill="#f43f5e" />
+  <path d="M72 32 C75 28, 67 25, 69 31 Z" fill="#f43f5e" />
+</svg>

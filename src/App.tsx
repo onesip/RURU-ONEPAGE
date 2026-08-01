@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { categories, miniApps, updates } from './data';
 import { AppCard } from './components/AppCard';
 import { Contact } from './components/Contact';
-import { Sparkles, Bell, Heart, X, Sparkle, Code2 } from 'lucide-react';
+import { RuruAvatar } from './components/RuruAvatar';
+import { Sparkles, Bell, Heart, X, Sparkle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
@@ -28,9 +29,7 @@ export default function App() {
       <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-xl border-b border-pink-100/80 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5 cursor-pointer group">
-            <div className="w-9 h-9 bg-gradient-to-br from-pink-300 to-purple-400 rounded-xl flex items-center justify-center text-white shadow-sm shadow-pink-100 group-hover:rotate-6 transition-transform">
-              <Code2 className="w-5 h-5" />
-            </div>
+            <RuruAvatar size="sm" className="group-hover:scale-105 transition-transform" />
             <span className="text-lg font-bold tracking-tight text-gray-800">
               如如的代码幻想乡
             </span>
@@ -102,13 +101,19 @@ export default function App() {
       {/* Hero Section */}
       <section className="pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-pink-200 text-pink-600 font-medium text-xs mb-6 shadow-xs"
+          className="flex flex-col items-center justify-center mb-5"
         >
-          <Heart className="w-3.5 h-3.5 fill-pink-300 text-pink-400" />
-          <span>Hi, 我是如如 🌷 · 喜欢做一些好玩又温暖的小网页</span>
+          <div className="relative mb-3">
+            <RuruAvatar size="xl" className="border-4 border-white shadow-md hover:scale-105 transition-transform" />
+            <span className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-400 border-2 border-white rounded-full"></span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-pink-200 text-pink-600 font-medium text-xs shadow-xs">
+            <Heart className="w-3.5 h-3.5 fill-pink-300 text-pink-400" />
+            <span>Hi, 我是如如 🌷 · 喜欢做一些好玩又温暖的小网页</span>
+          </div>
         </motion.div>
         
         <motion.h1 
