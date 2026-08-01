@@ -24,34 +24,34 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const toneMap = {
   rose: {
-    bar: 'bg-pink-500',
-    icon: 'bg-pink-100 text-pink-600',
-    link: 'text-pink-600',
-    button: 'group-hover:bg-pink-500'
+    bar: 'from-pink-400 to-fuchsia-500',
+    icon: 'border-pink-300/25 bg-pink-300/10 text-pink-300',
+    glow: 'group-hover:shadow-[0_24px_70px_-28px_rgba(244,114,182,0.55)]',
+    link: 'text-pink-300'
   },
   lavender: {
-    bar: 'bg-violet-500',
-    icon: 'bg-violet-100 text-violet-600',
-    link: 'text-violet-600',
-    button: 'group-hover:bg-violet-500'
+    bar: 'from-violet-400 to-fuchsia-500',
+    icon: 'border-violet-300/25 bg-violet-300/10 text-violet-300',
+    glow: 'group-hover:shadow-[0_24px_70px_-28px_rgba(167,139,250,0.55)]',
+    link: 'text-violet-300'
   },
   peach: {
-    bar: 'bg-orange-400',
-    icon: 'bg-orange-100 text-orange-600',
-    link: 'text-orange-600',
-    button: 'group-hover:bg-orange-500'
+    bar: 'from-orange-300 to-pink-400',
+    icon: 'border-orange-300/25 bg-orange-300/10 text-orange-300',
+    glow: 'group-hover:shadow-[0_24px_70px_-28px_rgba(251,146,60,0.48)]',
+    link: 'text-orange-300'
   },
   mint: {
-    bar: 'bg-emerald-500',
-    icon: 'bg-emerald-100 text-emerald-600',
-    link: 'text-emerald-600',
-    button: 'group-hover:bg-emerald-500'
+    bar: 'from-emerald-300 to-cyan-400',
+    icon: 'border-emerald-300/25 bg-emerald-300/10 text-emerald-300',
+    glow: 'group-hover:shadow-[0_24px_70px_-28px_rgba(52,211,153,0.48)]',
+    link: 'text-emerald-300'
   },
   sky: {
-    bar: 'bg-sky-500',
-    icon: 'bg-sky-100 text-sky-600',
-    link: 'text-sky-600',
-    button: 'group-hover:bg-sky-500'
+    bar: 'from-sky-300 to-violet-400',
+    icon: 'border-sky-300/25 bg-sky-300/10 text-sky-300',
+    glow: 'group-hover:shadow-[0_24px_70px_-28px_rgba(56,189,248,0.5)]',
+    link: 'text-sky-300'
   }
 };
 
@@ -63,54 +63,59 @@ export function AppCard({ app }: { app: MiniApp }) {
       href={app.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex h-full flex-col overflow-hidden rounded-[26px] border-2 border-slate-100 bg-white shadow-[0_18px_45px_-32px_rgba(15,23,42,0.42)] transition-all duration-300 hover:-translate-y-1.5 hover:border-violet-200 hover:shadow-[0_26px_55px_-30px_rgba(109,40,217,0.35)]"
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#0d2157]/90 p-5 shadow-[0_18px_55px_-32px_rgba(0,0,0,0.75)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-fuchsia-300/30 hover:bg-[#10265f] sm:p-6 ${tone.glow}`}
     >
-      <div className={`h-2 w-full ${tone.bar}`} />
+      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${tone.bar}`} />
+      <div className="app-card-grid pointer-events-none absolute inset-0 opacity-45" />
+      <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-fuchsia-400/10 blur-3xl" />
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-5 flex items-start justify-between gap-4">
-          <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${tone.icon}`}>
-            {iconMap[app.icon] || <Gamepad2 className="h-6 w-6" />}
-          </div>
-
-          <div className="flex flex-wrap justify-end gap-1.5">
-            {app.featured && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-black text-amber-700">
-                <Star className="h-3 w-3 fill-current" />
-                精选
-              </span>
-            )}
-            {app.isNew && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-2.5 py-1 text-[10px] font-black text-white">
-                <Sparkles className="h-3 w-3" />
-                NEW
-              </span>
-            )}
-          </div>
-        </div>
-
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-bold">
-          <span className="rounded-full bg-violet-50 px-2.5 py-1 text-violet-700">{app.category}</span>
-          {app.tag && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-500">{app.tag}</span>}
-        </div>
-
-        <h3 className="mb-2 text-xl font-black tracking-tight text-slate-900 transition-colors group-hover:text-violet-700">
-          {app.title}
-        </h3>
-        <p className="mb-6 flex-grow text-sm leading-7 text-slate-500">{app.description}</p>
-
-        <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-4">
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400">
-            <CalendarDays className="h-3.5 w-3.5" />
-            {app.dateAdded.replaceAll('-', '.')}
+      <div className="relative mb-5 flex items-start justify-between gap-3">
+        <div className="flex min-w-0 flex-wrap gap-2">
+          <span className="max-w-full truncate rounded-full border border-white/10 bg-white/[0.07] px-3 py-1 text-[10px] font-black text-blue-100/75">
+            {app.category}
           </span>
-          <span className={`inline-flex items-center gap-2 text-xs font-black ${tone.link}`}>
-            打开体验
-            <span className={`flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:rotate-45 group-hover:text-white ${tone.button}`}>
-              <ArrowUpRight className="h-4 w-4" />
+          {app.tag && (
+            <span className="rounded-full border border-fuchsia-300/20 bg-fuchsia-300/10 px-2.5 py-1 text-[10px] font-black text-fuchsia-200">
+              {app.tag}
             </span>
-          </span>
+          )}
         </div>
+
+        <div className="flex shrink-0 items-center gap-1.5">
+          {app.featured && (
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-amber-300/25 bg-amber-300/10 text-amber-300" title="如如精选">
+              <Star className="h-3.5 w-3.5 fill-current" />
+            </span>
+          )}
+          {app.isNew && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-fuchsia-500 to-violet-500 px-2.5 py-1 text-[10px] font-black tracking-wider text-white shadow-[0_0_18px_rgba(217,70,239,0.28)]">
+              <Sparkles className="h-3 w-3" />
+              NEW
+            </span>
+          )}
+        </div>
+      </div>
+
+      <div className={`relative mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border ${tone.icon} shadow-inner shadow-white/5 transition-transform duration-300 group-hover:scale-105`}>
+        {iconMap[app.icon] || <Gamepad2 className="h-6 w-6" />}
+      </div>
+
+      <h3 className="relative mb-2 text-xl font-black tracking-tight text-white transition-colors group-hover:text-fuchsia-100">
+        {app.title}
+      </h3>
+      <p className="relative mb-6 flex-grow text-sm leading-7 text-blue-100/58">{app.description}</p>
+
+      <div className="relative mt-auto flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-100/40">
+          <CalendarDays className="h-3.5 w-3.5 text-fuchsia-300/70" />
+          {app.dateAdded.replaceAll('-', '.')}
+        </span>
+        <span className={`inline-flex items-center gap-2 text-xs font-black ${tone.link}`}>
+          打开体验
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] transition-all group-hover:rotate-45 group-hover:border-fuchsia-300/30 group-hover:bg-fuchsia-500 group-hover:text-white">
+            <ArrowUpRight className="h-4 w-4" />
+          </span>
+        </span>
       </div>
     </a>
   );
