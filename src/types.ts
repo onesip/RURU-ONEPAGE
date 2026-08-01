@@ -1,4 +1,4 @@
-export type Category = '🌸 全部' | '🌿 生活与身心' | '🎈 社区与同好' | '✨ 效率与自律' | '🎮 独立小游戏';
+export type Category = '🌸 全部' | '🌿 生活与身心' | '🎈 社区与同好' | '✨ 效率与自律' | '🧪 邪修百科' | '🎮 独立小游戏';
 
 export type AppTone = 'rose' | 'lavender' | 'peach' | 'mint' | 'sky';
 
