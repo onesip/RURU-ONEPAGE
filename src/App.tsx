@@ -392,7 +392,6 @@ export default function App() {
             <div className="mb-9 flex flex-col items-center justify-between gap-5 text-center lg:flex-row lg:text-left">
               <div>
                 <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">如如的作品工具箱</h2>
-                <p className="mt-3 text-sm leading-6 text-blue-100/60">从主视觉到作品卡、按钮和联系区，全部统一成深蓝粉紫体系。</p>
               </div>
 
               <button
