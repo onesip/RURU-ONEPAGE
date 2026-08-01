@@ -1,4 +1,4 @@
-export type Category = '所有' | '实用工具' | '游戏娱乐' | '创意设计' | '学习开发';
+export type Category = '✨ 全部魔法' | '🌸 仙女日常' | '💕 贴贴交友' | '📝 效率拉满' | '🎮 梦幻游乐园';
 
 export interface MiniApp {
   id: string;

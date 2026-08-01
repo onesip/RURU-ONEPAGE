@@ -1,69 +1,69 @@
 import { MiniApp, Category, UpdateLog } from './types';
 
-export const categories: Category[] = ['所有', '实用工具', '游戏娱乐', '创意设计', '学习开发'];
+export const categories: Category[] = ['✨ 全部魔法', '🌸 仙女日常', '💕 贴贴交友', '📝 效率拉满', '🎮 梦幻游乐园'];
 
 export const updates: UpdateLog[] = [
   {
     id: 'u1',
     date: '2026-08-01',
-    content: '🎉 网站正式上线！欢迎大家探索各种有趣的小工具。如果有想要开发的新功能或者网站，随时点击底部的邮件联系我！',
+    content: '🌸 欢迎来到如如的代码幻想乡！这里是我亲手建造的小小世界，会把所有好玩的魔法都收集在这里哦 (≧∇≦)ﾉ',
   },
   {
     id: 'u2',
     date: '2026-08-02',
-    content: '✨ 新增了「极简番茄钟」和「密码生成器」两个实用工具。',
+    content: '✨ 上新啦！如如自己开发的《雨巷十三号》小游戏，还有超级贴心的《月知》身体记录本，快去玩玩看吧~',
   }
 ];
 
 export const miniApps: MiniApp[] = [
   {
     id: 'app-1',
-    title: '极简番茄钟',
-    description: '一个极简风格的番茄工作法计时器，帮助你保持专注，提升工作与学习效率。',
-    category: '实用工具',
-    icon: 'Timer',
-    url: '#',
+    title: '月知 - 身体提醒',
+    description: '仙女专属的生理期与身体记录本，贴心呵护你的每一天，软绵绵的关怀哦~',
+    category: '🌸 仙女日常',
+    icon: 'Heart',
+    url: 'https://yuezhi.vercel.app/',
     isNew: true,
     dateAdded: '2026-08-02'
   },
   {
     id: 'app-2',
-    title: '强密码生成器',
-    description: '在本地快速生成安全可靠的随机密码，不上传任何数据，保护你的账号安全。',
-    category: '实用工具',
-    icon: 'Key',
-    url: '#',
-    isNew: true,
-    dateAdded: '2026-08-02'
+    title: '软乎乎记账本',
+    description: '钱钱去哪里了？快用这个超可爱的记账本把它们都抓起来吧！',
+    category: '🌸 仙女日常',
+    icon: 'Wallet',
+    url: 'https://bankhome-hmza.vercel.app/',
+    isNew: false,
+    dateAdded: '2026-08-01'
   },
   {
     id: 'app-3',
-    title: '颜色转换器',
-    description: 'HEX、RGB、HSL 颜色值双向无缝转换工具，设计师和前端开发者的必备小助手。',
-    category: '创意设计',
-    icon: 'Palette',
-    url: '#',
+    title: '同好交友集散地',
+    description: '二次元的专属聚集地！在这里寻找同好，开心贴贴，遇见灵魂共鸣的小伙伴~',
+    category: '💕 贴贴交友',
+    icon: 'Users',
+    url: 'https://euro-acg.vercel.app/',
     isNew: false,
     dateAdded: '2026-08-01'
   },
   {
     id: 'app-4',
-    title: '每日灵感词汇',
-    description: '每天随机生成一个有趣的英文单词及其中文释义，在碎片时间扩充词汇量。',
-    category: '学习开发',
-    icon: 'BookOpen',
-    url: '#',
+    title: 'J星人狂喜记事本',
+    description: '让一切井井有条的 Check List，强迫症一本满足！每天都要做个超有计划的乖宝宝！',
+    category: '📝 效率拉满',
+    icon: 'ListTodo',
+    url: 'https://dayflow-open-planner.yangbooboo.chatgpt.site/',
     isNew: false,
     dateAdded: '2026-08-01'
   },
   {
     id: 'app-5',
-    title: '摸鱼贪吃蛇',
-    description: '经典的贪吃蛇小游戏，工作累了可以在网页上直接开玩，放松一下大脑。',
-    category: '游戏娱乐',
+    title: '雨巷十三号',
+    description: '如如亲手打造的神秘游戏世界！快来探索这个充满惊喜的原创小游戏吧 (๑•̀ㅂ•́)و✧',
+    category: '🎮 梦幻游乐园',
     icon: 'Gamepad2',
-    url: '#',
-    isNew: false,
-    dateAdded: '2026-08-01'
+    url: 'https://rain-alley-13.vercel.app/',
+    isNew: true,
+    dateAdded: '2026-08-02'
   }
 ];

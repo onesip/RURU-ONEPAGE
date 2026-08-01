@@ -1,45 +1,50 @@
 import React from 'react';
 import { MiniApp } from '../types';
-import { Timer, Key, Palette, BookOpen, Gamepad2, ArrowRight } from 'lucide-react';
+import { Heart, Wallet, Users, ListTodo, Gamepad2, Sparkles } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
-  Timer: <Timer className="w-6 h-6" />,
-  Key: <Key className="w-6 h-6" />,
-  Palette: <Palette className="w-6 h-6" />,
-  BookOpen: <BookOpen className="w-6 h-6" />,
+  Heart: <Heart className="w-6 h-6" />,
+  Wallet: <Wallet className="w-6 h-6" />,
+  Users: <Users className="w-6 h-6" />,
+  ListTodo: <ListTodo className="w-6 h-6" />,
   Gamepad2: <Gamepad2 className="w-6 h-6" />
 };
 
 export function AppCard({ app }: { app: MiniApp }) {
   return (
-    <div className="group relative bg-zinc-900 border border-zinc-800 rounded-[24px] p-6 hover:border-zinc-700 transition-colors flex flex-col h-full cursor-pointer overflow-hidden text-left col-span-1">
-      <div className="flex justify-between items-start mb-6">
-        <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
+    <a 
+      href={app.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative bg-white/80 backdrop-blur-md border-[3px] border-pink-100 rounded-[32px] p-6 hover:border-pink-300 hover:bg-pink-50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_-12px_rgba(244,114,182,0.4)] flex flex-col h-full cursor-pointer overflow-hidden text-left"
+    >
+      <div className="flex justify-between items-start mb-5">
+        <div className="text-xs font-bold text-purple-400 bg-purple-50 px-3 py-1 rounded-full">
           {app.category}
         </div>
         {app.isNew && (
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 bg-red-500 rounded-full inline-block"></span>
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">New</span>
+          <div className="flex items-center gap-1 bg-pink-100 px-2.5 py-1 rounded-full animate-bounce">
+            <Sparkles className="w-3 h-3 text-pink-500" />
+            <span className="text-[10px] font-black text-pink-500">NEW</span>
           </div>
         )}
       </div>
       
-      <div className="w-12 h-12 bg-zinc-800 text-zinc-400 rounded-xl flex items-center justify-center mb-5 group-hover:bg-zinc-700 group-hover:text-zinc-50 transition-all duration-300">
-        {iconMap[app.icon] || <Gamepad2 className="w-5 h-5" />}
+      <div className="w-14 h-14 bg-gradient-to-br from-pink-100 to-purple-100 text-pink-500 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:from-pink-400 group-hover:to-purple-400 group-hover:text-white transition-all duration-300 shadow-sm border border-pink-50">
+        {iconMap[app.icon] || <Gamepad2 className="w-6 h-6" />}
       </div>
       
-      <h3 className="text-xl font-bold text-zinc-50 mb-2">{app.title}</h3>
-      <p className="text-zinc-400 text-sm leading-relaxed flex-grow mb-6">{app.description}</p>
+      <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-pink-600 transition-colors">{app.title}</h3>
+      <p className="text-gray-500 text-sm leading-relaxed flex-grow mb-6">{app.description}</p>
       
-      <div className="flex items-center justify-between mt-auto">
-        <span className="inline-flex items-center px-3 py-1 bg-zinc-800 text-zinc-300 text-[12px] font-medium rounded-full">
-          Open App
+      <div className="flex items-center justify-between mt-auto pt-4 border-t-2 border-dashed border-pink-100">
+        <span className="inline-flex items-center text-pink-400 text-[13px] font-bold group-hover:text-pink-600 transition-colors">
+          去看看鸭 ~
         </span>
-        <div className="flex items-center text-zinc-500 font-medium text-sm group-hover:text-zinc-300 transition-colors">
-          <ArrowRight className="w-4 h-4" />
+        <div className="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-pink-400 group-hover:bg-pink-200 group-hover:text-pink-600 transition-colors">
+          →
         </div>
       </div>
-    </div>
+    </a>
   );
 }

@@ -1,6 +1,6 @@
 {
-  "name": "极客工坊 - 小程序集合",
-  "description": "个人开发的网页小程序、工具集合站。持续更新中，支持邮件反馈需求。",
+  "name": "如如的代码幻想乡",
+  "description": "如如亲手建造的超可爱网页小程序集合，粉白粉紫的梦幻空间，一起探索好玩的小魔法吧~",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
