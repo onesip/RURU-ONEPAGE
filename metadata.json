@@ -1,0 +1,6 @@
+{
+  "name": "极客工坊 - 小程序集合",
+  "description": "个人开发的网页小程序、工具集合站。持续更新中，支持邮件反馈需求。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
