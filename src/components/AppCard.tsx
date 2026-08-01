@@ -26,27 +26,32 @@ const toneMap = {
   rose: {
     bar: 'bg-pink-500',
     icon: 'bg-pink-100 text-pink-600',
-    link: 'text-pink-600 group-hover:bg-pink-500'
+    link: 'text-pink-600',
+    button: 'group-hover:bg-pink-500'
   },
   lavender: {
     bar: 'bg-violet-500',
     icon: 'bg-violet-100 text-violet-600',
-    link: 'text-violet-600 group-hover:bg-violet-500'
+    link: 'text-violet-600',
+    button: 'group-hover:bg-violet-500'
   },
   peach: {
     bar: 'bg-orange-400',
     icon: 'bg-orange-100 text-orange-600',
-    link: 'text-orange-600 group-hover:bg-orange-500'
+    link: 'text-orange-600',
+    button: 'group-hover:bg-orange-500'
   },
   mint: {
     bar: 'bg-emerald-500',
     icon: 'bg-emerald-100 text-emerald-600',
-    link: 'text-emerald-600 group-hover:bg-emerald-500'
+    link: 'text-emerald-600',
+    button: 'group-hover:bg-emerald-500'
   },
   sky: {
     bar: 'bg-sky-500',
     icon: 'bg-sky-100 text-sky-600',
-    link: 'text-sky-600 group-hover:bg-sky-500'
+    link: 'text-sky-600',
+    button: 'group-hover:bg-sky-500'
   }
 };
 
@@ -101,7 +106,7 @@ export function AppCard({ app }: { app: MiniApp }) {
           </span>
           <span className={`inline-flex items-center gap-2 text-xs font-black ${tone.link}`}>
             打开体验
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:rotate-45 group-hover:text-white">
+            <span className={`flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:rotate-45 group-hover:text-white ${tone.button}`}>
               <ArrowUpRight className="h-4 w-4" />
             </span>
           </span>
