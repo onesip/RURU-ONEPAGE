@@ -1,6 +1,6 @@
 import { MiniApp, Category, UpdateLog } from './types';
 
-export const categories: Category[] = ['🌸 全部', '🌿 生活与身心', '🎈 社区与同好', '✨ 效率与自律', '🎮 独立小游戏'];
+export const categories: Category[] = ['🌸 全部', '🌿 生活与身心', '🎈 社区与同好', '✨ 效率与自律', '🧪 邪修百科', '🎮 独立小游戏'];
 
 export const updates: UpdateLog[] = [
   {
@@ -12,6 +12,11 @@ export const updates: UpdateLog[] = [
     id: 'u2',
     date: '2026-08-01',
     content: '✨ 收录了原创剧情游戏《雨巷十三号》和女生身体节律助手《月知》，新的网页、小工具和游戏也会继续住进这里。',
+  },
+  {
+    id: 'u3',
+    date: '2026-08-01',
+    content: '🧪 新增《如如邪修百科》：把公开分享中的省力、省钱和脑洞生活技巧整理成可以搜索和分类浏览的实验室。',
   }
 ];
 
@@ -82,5 +87,19 @@ export const miniApps: MiniApp[] = [
     keywords: ['游戏', '剧情', '互动', '悬疑', '雨巷', '独立游戏'],
     featured: true,
     tone: 'sky'
+  },
+  {
+    id: 'app-6',
+    title: '如如邪修百科',
+    description: '把散落在公开分享里的省力、省钱和脑洞生活技巧收进一间可搜索、可分类浏览的邪修实验室。先看原理和风险，再决定要不要亲自试。',
+    category: '🧪 邪修百科',
+    icon: 'FlaskConical',
+    url: 'https://ruru-xiexiu-lab.vercel.app/',
+    isNew: true,
+    dateAdded: '2026-08-01',
+    tag: '脑洞技巧',
+    keywords: ['邪修', '百科', '攻略', '技巧', '省钱', '省力', '生活妙招', '实验室', '小红书'],
+    featured: true,
+    tone: 'lavender'
   }
 ];
