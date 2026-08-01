@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
-const HERO_IMAGE_URL = 'https://design.canva.ai/Dd8oyi3t0QbHj7M';
+const HERO_IMAGE_URL = '/ruru-hero.webp';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
@@ -192,9 +192,9 @@ export default function App() {
               </motion.div>
 
               <div className="flex flex-wrap justify-center gap-3 text-xs font-bold text-blue-100/75 lg:justify-start">
-                <span className="rounded-full border border-white/15 bg-white/8 px-3 py-2">{miniApps.length} 个作品</span>
-                <span className="rounded-full border border-white/15 bg-white/8 px-3 py-2">{categories.length - 1} 个分类</span>
-                <span className="rounded-full border border-white/15 bg-white/8 px-3 py-2">一站直达</span>
+                <span className="rounded-full border border-white/15 bg-white/[0.08] px-3 py-2">{miniApps.length} 个作品</span>
+                <span className="rounded-full border border-white/15 bg-white/[0.08] px-3 py-2">{categories.length - 1} 个分类</span>
+                <span className="rounded-full border border-white/15 bg-white/[0.08] px-3 py-2">一站直达</span>
               </div>
             </div>
 
@@ -211,9 +211,6 @@ export default function App() {
                   alt="紫发动漫女孩在开发桌前使用平板电脑"
                   className="h-full w-full object-cover object-center"
                   loading="eager"
-                  onError={(event) => {
-                    event.currentTarget.style.display = 'none';
-                  }}
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#071742] via-[#071742]/35 to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 flex items-center justify-between rounded-2xl border border-white/25 bg-[#071742]/75 px-4 py-3 backdrop-blur-md">
