@@ -1,0 +1,39 @@
+/* RURU brand skin: keep the existing layout, replace the old generic code tile. */
+header a[href="#top"] > span:first-child {
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 15px !important;
+  background: #07123f url('/ruru-icon.svg') center / cover no-repeat !important;
+  box-shadow: 0 0 24px rgba(217, 70, 239, 0.34), 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+}
+
+header a[href="#top"] > span:first-child > svg {
+  display: none !important;
+}
+
+header a[href="#top"] > span:last-child > span:first-child {
+  text-shadow: 0 0 18px rgba(217, 70, 239, 0.22);
+}
+
+@media (min-width: 1024px) {
+  header a[href="#top"] {
+    width: 360px;
+    height: 52px;
+    background: url('/ruru-brand.svg') left center / contain no-repeat;
+  }
+
+  header a[href="#top"] > span {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  header a[href="#top"] > span:first-child {
+    width: 42px !important;
+    height: 42px !important;
+    flex-basis: 42px !important;
+  }
+}
