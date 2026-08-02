@@ -1,0 +1,33 @@
+{
+  "name": "如如的代码幻想乡",
+  "short_name": "RURU APP",
+  "description": "如如开发的网页小程序、生活工具与独立游戏合集",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#061237",
+  "theme_color": "#061237",
+  "categories": ["utilities", "games", "lifestyle"],
+  "icons": [
+    {
+      "src": "/ruru-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/api/icon?size=192",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/api/icon?size=512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
