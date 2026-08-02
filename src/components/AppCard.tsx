@@ -16,6 +16,13 @@ import {
   X
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
+import yuezhiBanner from '../assets/banners/yuezhi';
+import thirteenthBanner from '../assets/banners/thirteenth';
+import ledgerBanner from '../assets/banners360/ledger';
+import acgBanner from '../assets/banners360/acg';
+import focusBanner from '../assets/banners360/focus';
+import rainBanner from '../assets/banners360/rain';
+import xiexiuBanner from '../assets/banners360/xiexiu';
 
 const iconMap: Record<string, React.ReactNode> = {
   Heart: <Heart className="h-5 w-5" />,
@@ -35,20 +42,20 @@ const toneMap = {
 };
 
 const bannerMap: Record<string, string> = {
-  'app-1': '/banners/yuezhi.webp',
-  'app-2': '/banners/ledger.webp',
-  'app-3': '/banners/acg.webp',
-  'app-4': '/banners/focus.webp',
-  'app-5': '/banners/rain.webp',
-  'app-6': '/banners/xiexiu.webp',
-  'app-7': '/banners/thirteenth.webp'
+  'app-1': yuezhiBanner,
+  'app-2': ledgerBanner,
+  'app-3': acgBanner,
+  'app-4': focusBanner,
+  'app-5': rainBanner,
+  'app-6': xiexiuBanner,
+  'app-7': thirteenthBanner
 };
 
 function AppBanner({ app, large = false }: { app: MiniApp; large?: boolean }) {
   const src = bannerMap[app.id];
 
   return (
-    <div className="relative aspect-[16/9] overflow-hidden bg-[#071640]">
+    <div className={`relative overflow-hidden bg-[#071640] ${large ? 'aspect-[16/9]' : 'aspect-[16/9]'}`}>
       <img
         src={src}
         alt={`${app.title} 轻动漫横幅`}
