@@ -1,1 +1,1 @@
-/mnt/data/AppCard.final.tsx
+þiíýÖ­kð)¤&«uø§j[l
