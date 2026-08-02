@@ -15,6 +15,11 @@ export interface MiniApp {
   keywords?: string[];
   featured?: boolean;
   tone?: AppTone;
+  intro: string;
+  audience: string;
+  features: string[];
+  steps: string[];
+  notice?: string;
 }
 
 export interface UpdateLog {
