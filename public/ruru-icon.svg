@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">如如的代码幻想乡 App 图标</title>
+  <desc id="desc">深蓝粉紫霓虹猫耳代码徽章</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="70" x2="900" y2="950" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101456"/>
+      <stop offset="0.48" stop-color="#071846"/>
+      <stop offset="1" stop-color="#020a2a"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="70" y1="90" x2="930" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff72ed"/>
+      <stop offset="0.45" stop-color="#a85bff"/>
+      <stop offset="1" stop-color="#5577ff"/>
+    </linearGradient>
+    <linearGradient id="symbol" x1="250" y1="290" x2="790" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe0f8"/>
+      <stop offset="0.42" stop-color="#ff83de"/>
+      <stop offset="0.72" stop-color="#b57aff"/>
+      <stop offset="1" stop-color="#6987ff"/>
+    </linearGradient>
+    <linearGradient id="ear" x1="330" y1="170" x2="690" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffd3f3"/>
+      <stop offset="1" stop-color="#f06bd8"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="48%" r="58%">
+      <stop stop-color="#d76bff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#6d43ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="22" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.9  0 0.4 0 0 0.1  0 0 1 0 0.9  0 0 0 0.8 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="symbolGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="13" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000521" flood-opacity="0.72"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <rect x="28" y="28" width="968" height="968" rx="205" fill="none" stroke="url(#frame)" stroke-width="36" filter="url(#softGlow)"/>
+  <rect x="62" y="62" width="900" height="900" rx="174" fill="none" stroke="#efdcff" stroke-opacity="0.32" stroke-width="3"/>
+  <rect x="82" y="82" width="860" height="860" rx="154" fill="url(#centerGlow)"/>
+
+  <g opacity="0.55" stroke-linecap="round" fill="none">
+    <path d="M96 282h92l38-38h76" stroke="#8f63ff" stroke-width="9"/>
+    <path d="M806 174h70v72h72" stroke="#d95cff" stroke-width="8"/>
+    <path d="M784 828h102l34-34h40" stroke="#647cff" stroke-width="8"/>
+    <path d="M72 742h74l44-44h56" stroke="#5f82ff" stroke-width="8"/>
+    <circle cx="302" cy="244" r="9" fill="#ff86df" stroke="none"/>
+    <circle cx="876" cy="174" r="9" fill="#9a70ff" stroke="none"/>
+    <circle cx="886" cy="828" r="8" fill="#ff7edb" stroke="none"/>
+    <circle cx="190" cy="698" r="8" fill="#767dff" stroke="none"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M306 316C288 234 318 164 376 130L486 254" fill="none" stroke="url(#frame)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M718 316C736 234 706 164 648 130L538 254" fill="none" stroke="url(#frame)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M331 296C321 241 337 201 375 177L449 264" fill="url(#ear)" stroke="#ffe8fb" stroke-opacity="0.72" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M693 296C703 241 687 201 649 177L575 264" fill="url(#ear)" stroke="#ffe8fb" stroke-opacity="0.72" stroke-width="8" stroke-linejoin="round"/>
+
+    <circle cx="512" cy="512" r="320" fill="#06123d" stroke="url(#frame)" stroke-width="34"/>
+    <circle cx="512" cy="512" r="286" fill="none" stroke="#f0d9ff" stroke-opacity="0.22" stroke-width="4"/>
+
+    <g filter="url(#symbolGlow)" stroke="url(#symbol)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M410 374L268 512l142 138" stroke-width="86"/>
+      <path d="M614 374l142 138-142 138" stroke-width="86"/>
+      <path d="M568 336L466 688" stroke-width="86"/>
+    </g>
+    <g stroke="#fff6ff" stroke-opacity="0.64" stroke-linecap="round" fill="none">
+      <path d="M403 376L276 512l127 136" stroke-width="11"/>
+      <path d="M621 376l127 136-127 136" stroke-width="11"/>
+      <path d="M561 342L474 681" stroke-width="11"/>
+    </g>
+
+    <path d="M512 438l22 51 51 23-51 22-22 52-23-52-51-22 51-23z" fill="#fff9ff" filter="url(#softGlow)"/>
+    <path d="M753 674c45 4 76 35 76 76 0 48-42 78-106 102 19-40 18-72-1-104-17-30-4-69 31-74z" fill="url(#ear)" stroke="#fff0ff" stroke-opacity="0.75" stroke-width="8"/>
+    <path d="M690 839c82-11 137-48 158-112" fill="none" stroke="url(#frame)" stroke-width="23" stroke-linecap="round"/>
+    <circle cx="869" cy="706" r="13" fill="#fa8be0"/>
+  </g>
+
+  <g fill="#ffe9fb">
+    <path d="M160 221l12 28 28 12-28 12-12 28-12-28-28-12 28-12z"/>
+    <path d="M849 298l10 23 23 10-23 10-10 23-10-23-23-10 23-10z"/>
+    <path d="M184 771l13 30 30 13-30 13-13 30-13-30-30-13 30-13z"/>
+    <path d="M849 809l9 21 21 9-21 9-9 21-9-21-21-9 21-9z"/>
+    <circle cx="254" cy="184" r="8" fill="#ff7fde"/>
+    <circle cx="802" cy="194" r="7" fill="#8d75ff"/>
+    <circle cx="258" cy="862" r="7" fill="#8d75ff"/>
+  </g>
+
+  <text x="512" y="925" text-anchor="middle" fill="#f5a6e7" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="46" font-weight="800" letter-spacing="19">RURU</text>
+</svg>
