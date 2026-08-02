@@ -22,6 +22,11 @@ export const updates: UpdateLog[] = [
     id: 'u4',
     date: '2026-08-01',
     content: '💜 首页升级为深蓝科技感与精致轻动漫主视觉。人物改用固定比例完整图片，手机和电脑端都不会再发生元素移位。',
+  },
+  {
+    id: 'u5',
+    date: '2026-08-02',
+    content: '📜 新增规则怪谈文字游戏《第十三句话》：读规则、辨真假，在每一句看似合理的话里寻找真正能够活下去的答案。',
   }
 ];
 
@@ -106,5 +111,18 @@ export const miniApps: MiniApp[] = [
     keywords: ['邪修', '百科', '攻略', '技巧', '省钱', '省力', '生活妙招', '实验室', '小红书'],
     featured: true,
     tone: 'lavender'
+  },
+  {
+    id: 'app-7',
+    title: '第十三句话',
+    description: '一款规则怪谈类文字游戏。阅读那些看似明确、却可能彼此矛盾的规则，在每一次选择里判断什么能信、什么不能信。第十三句话出现时，也许规则已经不是原来的规则。',
+    category: '🎮 独立小游戏',
+    icon: 'Gamepad2',
+    url: 'https://thirteenth-sentence.vercel.app/',
+    isNew: true,
+    dateAdded: '2026-08-02',
+    tag: '规则怪谈',
+    keywords: ['第十三句话', '规则怪谈', '文字游戏', '怪谈', '悬疑', '剧情', '选择', '独立游戏'],
+    tone: 'sky'
   }
 ];
