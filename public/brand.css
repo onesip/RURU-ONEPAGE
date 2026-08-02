@@ -18,6 +18,19 @@ header a[href="#top"] > span:last-child > span:first-child {
   text-shadow: 0 0 18px rgba(217, 70, 239, 0.22);
 }
 
+/*
+ * iPhone Safari / installed PWA can draw the page underneath the notch or
+ * Dynamic Island because the site uses viewport-fit=cover and a translucent
+ * status bar. Let the sticky header fill that area, then place its content a
+ * few pixels below the real safe-area boundary. Since the header stays in the
+ * normal document flow, the hero banner is pushed down by the same amount.
+ */
+@media (hover: none) and (pointer: coarse) {
+  header.sticky {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6px);
+  }
+}
+
 @media (min-width: 1024px) {
   header a[href="#top"] {
     width: 360px;
