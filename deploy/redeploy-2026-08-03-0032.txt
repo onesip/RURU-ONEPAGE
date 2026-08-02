@@ -1,0 +1,1 @@
+Redeploy requested after verifying all seven app banner modules and removing runtime dependence on the previously broken public banner files.
